@@ -15,9 +15,15 @@ public class charfinder {
 		
 		System.out.println(s + " length is " + s.length());
 		
-		cf.printAllCharPosition(s);
+		//cf.printAllCharPosition(s);
 		
-		cf.getCHarPos(s, 'k');
+		//cf.getCharPos(s, 'k');
+		
+		//cf.countCharOccAlaForLoop(s, 'k');
+		
+		cf.countCharOccAlaWhileLoop(s, 'k');
+		
+	
 	}
 
 	Character getfirstChar(String s){
@@ -73,4 +79,64 @@ public class charfinder {
 			System.out.println(tofind+ " was not found ");
 		}
 	}
+	
+	void countCharOccAlaForLoop(String s, Character tofind){
+		
+		s= s.toLowerCase();
+		
+		// for(Initialisierung, Abbruch Bedingung, i++)
+		
+		Integer stringLength = s.length();
+		Integer charOcc = 0;
+		
+		for(Integer i=0; i < stringLength; i++){
+		
+			if(s.charAt(i) != tofind){
+				continue;
+			} else{
+				charOcc++;
+			}
+		}
+			if (charOcc == 0){
+				System.out.print(" ' "+tofind+" ' was not found in "+ s);
+			}else{ 
+				if(charOcc == 1){
+					System.out.println("There is" + charOcc+ "occurence of" + tofind + "in" + s);
+				}else{
+					System.out.println("There are " + charOcc + "occurences of" + tofind + "in" + s);
+				}
+			}
+		}
+			void countCharOccAlaWhileLoop(String s, Character tofind){
+				
+				s= s.toLowerCase();
+				
+				Integer currentPosition = 0;
+				Integer charOcc = 0;
+				
+				while(currentPosition<=s.length()){
+				
+					if(s.charAt(currentPosition) != tofind){
+						
+						currentPosition ++;
+						
+						continue;
+						
+					}else{
+						
+						charOcc++;
+					}
+					if (charOcc == 0){
+						System.out.print(" ' "+tofind+" ' was not found in "+ s);
+					}else{ 
+						if(charOcc == 1){
+							System.out.println("There is " + charOcc+ "occurence of " + tofind + " in " + s);
+						}else{
+							System.out.println("There are " + charOcc + "occurences of " + tofind + " in " + s);
+						}
+				}
+			}
 }
+
+}
+
