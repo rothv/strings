@@ -125,6 +125,7 @@ public class charfinder {
 					}else{
 						
 						charOcc++;
+						currentPosition++;
 					}
 					if (charOcc == 0){
 						System.out.print(" ' "+tofind+" ' was not found in "+ s);
